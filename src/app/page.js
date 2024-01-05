@@ -1,3 +1,18 @@
+import DemoSection from "@/components/DemoSection";
+import PageHeaders from "@/components/PageHeaders";
+import UploadForm from "@/components/UploadForm";
+
 export default function Home() {
-  return <div>test</div>;
+  return (
+    <>
+      <PageHeaders
+        h1Text="Auto-generate captions for your videos"
+        h2Text="Just upload your video and we will do the rest"
+      />
+      <div className="text-center">
+        <UploadForm />
+      </div>
+      <DemoSection />
+    </>
+  );
 }
