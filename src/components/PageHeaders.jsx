@@ -3,14 +3,14 @@ export default function PageHeaders({
   h2Text = "Subheader text",
 }) {
   return (
-    <section className="text-center mt-24 mb-8">
+    <section className="mt-12 mb-4 text-center sm:mb-8 sm:mt-24">
       <h1
-        className="text-3xl"
+        className="text-xl sm:text-3xl"
         style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.2)" }}
       >
         {h1Text}
       </h1>
-      <h2 className="text-white/75">{h2Text}</h2>
+      <h2 className="text-sm text-white/75 sm:text-base">{h2Text}</h2>
     </section>
   );
 }

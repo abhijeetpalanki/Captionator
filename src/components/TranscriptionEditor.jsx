@@ -20,7 +20,7 @@ export default function TranscriptionEditor({
         <div>Content</div>
       </div>
       {transcriptionItems.length > 0 && (
-        <div>
+        <div className="h-48 overflow-y-scroll sm:h-auto sm:overflow-auto">
           {transcriptionItems.map((item, key) => (
             <div key={key}>
               <TranscriptionItem

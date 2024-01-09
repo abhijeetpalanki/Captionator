@@ -72,7 +72,7 @@ export default function VideoResult({ filename, transcriptionItems }) {
       "-vf",
       `subtitles=subs.srt:fontsdir=/tmp:force_style='FontName=Roboto Bold,Fontsize=30,PrimaryColour=${rgbToASCII(
         primaryColor
-      )},OutlineColour=${rgbToASCII(outlineColor)},MarginV=40'`,
+      )},OutlineColour=${rgbToASCII(outlineColor)},MarginV=60'`,
       "output.mp4",
     ]);
     const data = await ffmpeg.readFile("output.mp4");

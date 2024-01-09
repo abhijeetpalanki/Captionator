@@ -45,7 +45,7 @@ export default function FilePage({ params }) {
 
   return (
     <div>
-      <div className="grid grid-cols-2 gap-16">
+      <div className="grid gap-8 sm:gap-16 sm:grid-cols-2">
         <div className="">
           <h2 className="mb-4 text-2xl text-white/60">Transcription</h2>
           <TranscriptionEditor

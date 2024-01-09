@@ -22,13 +22,13 @@ export default function RootLayout({ children }) {
           " bg-gradient-to-b from-bgGradientFrom to-bgGradientTo min-h-screen text-white"
         }
       >
-        <main className="p-4 max-w-2xl mx-auto">
-          <header className="flex justify-between my-8">
+        <main className="max-w-2xl p-4 mx-auto">
+          <header className="flex justify-between my-2 sm:my-8">
             <Link href="/" className="flex gap-1">
               <SparklesIcon />
               <span>Captionator</span>
             </Link>
-            <nav className="flex gap-6 text-white/80">
+            <nav className="flex items-center gap-2 text-sm sm:gap-6 text-white/80 sm:text-base">
               <Link href="/" className="">
                 Home
               </Link>
