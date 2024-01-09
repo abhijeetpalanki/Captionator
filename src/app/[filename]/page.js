@@ -1,7 +1,7 @@
 "use client";
 
-import SparklesIcon from "@/components/SparklesIcon";
-import TranscriptionItem from "@/components/TranscriptionItem";
+import TranscriptionEditor from "@/components/TranscriptionEditor";
+import VideoResult from "@/components/VideoResult";
 import { clearTranscriptionItems } from "@/libs/awsTranscriptionHelpers";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -48,30 +48,17 @@ export default function FilePage({ params }) {
       <div className="grid grid-cols-2 gap-16">
         <div className="">
           <h2 className="mb-4 text-2xl text-white/60">Transcription</h2>
-          <div className="sticky top-0 grid grid-cols-3 p-2 rounded-md bg-violet-800/80">
-            <div>From</div>
-            <div>End</div>
-            <div>Content</div>
-          </div>
-          {transcriptionItems.length > 0 &&
-            transcriptionItems.map((item, i) => (
-              <TranscriptionItem item={item} key={i} />
-            ))}
+          <TranscriptionEditor
+            transcriptionItems={transcriptionItems}
+            setTranscriptionItems={setTranscriptionItems}
+          />
         </div>
         <div className="">
           <h2 className="mb-4 text-2xl text-white/60">Result</h2>
-          <div className="mb-4">
-            <button className="inline-flex gap-2 px-6 py-2 bg-green-600 border-2 rounded-full cursor-pointer border-purple-700/50">
-              <SparklesIcon />
-              <span>Apply Captions</span>
-            </button>
-          </div>
-          <div className="overflow-hidden rounded-xl">
-            <video
-              controls
-              src={"https://ayp-captionator.s3.amazonaws.com/" + filename}
-            ></video>
-          </div>
+          <VideoResult
+            filename={filename}
+            transcriptionItems={transcriptionItems}
+          />
         </div>
       </div>
     </div>
